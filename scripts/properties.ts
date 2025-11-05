@@ -15,31 +15,31 @@ export type SemVer = {
  */
 
 export const properties = {
-    id: "kairo-template", # // a-z & 0-9 - _
+    id: "werewolf-standardroles",
     metadata: { 
         /** 製作者の名前 */
         authors: [
-            //"shizuku86"
+            "shizuku86"
         ]
     },
     header: {
-        name: "Kairo-template", #
-        description: "A starter template for developing Minecraft Bedrock addons that rely on Kairo.", #
+        name: "Werewolf Standard Roles",
+        description: "provides and handles the fundamental roles of the Werewolf game.",
         version: { 
             major: 1, 
             minor: 0, 
             patch: 0,
             // prerelease: "preview.1",
-            // build: "abc123",
+            build: "dev.1",
         },
         min_engine_version: [ 1,21,100 ],
-        uuid: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" #
+        uuid: "39716916-2dec-4c1f-b1e6-b9ff0496899b"
     },
     resourcepack: {
         name: "Use BP Name",
         description: "Use BP Description",
-        uuid: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", #
-        module_uuid: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", #
+        uuid: "ae9411df-ada9-4e2e-a563-924f38978c9c",
+        module_uuid: "2dd8fafe-b659-4532-ae6f-1f63bd23c727",
     },
     modules: [
         {
@@ -47,24 +47,22 @@ export const properties = {
 			language: "javascript",
 			entry: "scripts/index.js",
             version: "header.version",
-            uuid: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" #
+            uuid: "452e2f4a-8a7f-44b2-967b-a604ba9e3955"
         }
     ],
     dependencies: [
 		{
 			module_name: "@minecraft/server",
-			version: "2.1.0" #
+			version: "2.1.0"
 		},
 		{
 			module_name: "@minecraft/server-ui",
-			version: "2.0.0" #
+			version: "2.0.0"
 		}
 	],
     /** 前提アドオン */
     requiredAddons: {
-        /**
-         * id: version (string) // "kairo": "1.0.0"
-         */
+        "werewolf-gamemanager": "1.0.0-dev.1" // "kairo": "1.0.0"
     },
     tags: [
         // "stable",
