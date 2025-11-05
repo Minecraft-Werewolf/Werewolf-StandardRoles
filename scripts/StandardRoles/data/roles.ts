@@ -40,8 +40,6 @@ type RoleRef = RoleKey;
 
 export interface Role {
     id: string;
-    name: string;
-    description: string;
     faction: RoleFaction;
     count: {
         max?: number;
@@ -59,3 +57,12 @@ export interface Role {
     }
     sortIndex: number; // ソート順
 }
+
+export const roles: Role[] = [
+    {
+        id: "villager",
+        faction: "villager",
+        count: { max: 40 },
+        sortIndex: 0,
+    }
+]
