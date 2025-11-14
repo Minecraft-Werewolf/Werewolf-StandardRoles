@@ -4,11 +4,7 @@ export const RoleFactionValues = [
     "fox",
     "neutral",
 ];
-export const ResultTypeValues = [
-    "villager",
-    "werewolf",
-    "fox",
-];
+export const ResultTypeValues = ["villager", "werewolf", "fox"];
 export const ColorTypeValues = [
     "villager_lime",
     "werewolf_red",
@@ -29,5 +25,5 @@ export const roles = [
         faction: "villager",
         count: { max: 40 },
         sortIndex: 0,
-    }
+    },
 ];
