@@ -29,6 +29,7 @@ interface RoleKey {
 
 type RoleRef = RoleKey;
 
+// name と description はidを使った translate 表現でやるからいらない
 export interface Role {
     id: string;
     faction: RoleFaction;

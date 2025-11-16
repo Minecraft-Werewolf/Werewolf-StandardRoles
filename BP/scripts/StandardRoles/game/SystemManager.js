@@ -64,5 +64,8 @@ export class SystemManager {
     createOutGameManager() {
         return OutGameManager.create(this);
     }
+    getRoleManager() {
+        return this.roleManager;
+    }
 }
 SystemManager.instance = null;

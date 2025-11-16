@@ -81,4 +81,8 @@ export class SystemManager {
     public createOutGameManager(): OutGameManager {
         return OutGameManager.create(this);
     }
+
+    public getRoleManager(): RoleManager {
+        return this.roleManager;
+    }
 }
