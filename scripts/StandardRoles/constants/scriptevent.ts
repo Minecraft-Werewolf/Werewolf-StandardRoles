@@ -1,14 +1,9 @@
 export const SCRIPT_EVENT_COMMAND_IDS = {
     WORLD_STATE_CHANGE: "world_state_change",
     FACTION_REGISTRATION_REQUEST: "role_registration_request",
-    FACTION_REGISTRATION_RESPONSE: "faction_registration_response",
+    FACTION_RE_REGISTRATION_REQUEST: "role_re_registration_request",
     ROLE_REGISTRATION_REQUEST: "role_registration_request",
-    ROLE_REGISTRATION_RESPONSE: "role_registration_response",
-};
-
-export const SCRIPT_EVENT_ID_SUFFIX = {
-    BROADCAST: "_kBroadcast",
-    WEREWOLF_GAMEMANAGER: "werewolf-gamemanager",
+    ROLE_RE_REGISTRATION_REQUEST: "role_re_registration_request",
 };
 
 export const SCRIPT_EVENT_MESSAGES = {

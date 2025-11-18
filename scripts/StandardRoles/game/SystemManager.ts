@@ -31,7 +31,11 @@ export class SystemManager {
     }
 
     public init(): void {
-        this.changeWorldState(GameWorldState.OutGame);
+        this.requestFactionRegistration();
+        this.requestRoleRegistration();
+
+        // WorldState について GameManager に尋ねることと、
+        // requestがちゃんと通ったかを GameManager から返してもらいたい。
     }
 
     private static instance: SystemManager | null = null;
@@ -86,11 +90,11 @@ export class SystemManager {
         return OutGameManager.create(this);
     }
 
-    public getFactionManager(): FactionManager {
-        return this.factionManager;
+    public requestFactionRegistration(): void {
+        this.factionManager.requestFactionRegistration();
     }
 
-    public getRoleManager(): RoleManager {
-        return this.roleManager;
+    public requestRoleRegistration(): void {
+        this.roleManager.requestRoleRegistration();
     }
 }

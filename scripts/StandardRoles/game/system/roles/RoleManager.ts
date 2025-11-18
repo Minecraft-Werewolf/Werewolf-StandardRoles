@@ -1,16 +1,16 @@
 import type { SystemManager } from "../../SystemManager";
-import { RoleDefinitionsSender } from "./RoleDefinitionsSender";
+import { RoleRegistrationRequester } from "./RoleRegistrationRequester";
 
 export class RoleManager {
-    private readonly roleDefinitionsSender: RoleDefinitionsSender;
+    private readonly roleRegistrationRequester: RoleRegistrationRequester;
     private constructor(private readonly systemManager: SystemManager) {
-        this.roleDefinitionsSender = RoleDefinitionsSender.create(this);
+        this.roleRegistrationRequester = RoleRegistrationRequester.create(this);
     }
     public static create(systemManager: SystemManager): RoleManager {
         return new RoleManager(systemManager);
     }
 
-    public sendRoleDefinitions(): void {
-        this.roleDefinitionsSender.send();
+    public requestRoleRegistration(): void {
+        this.roleRegistrationRequester.request();
     }
 }

@@ -1,16 +1,16 @@
 import type { SystemManager } from "../../SystemManager";
-import { FactionDefinitionsSender } from "./FactionDefinitionsSender";
+import { FactionRegistrationRequester } from "./FactionRegistrationRequester";
 
 export class FactionManager {
-    private readonly factionDefinitionsSender: FactionDefinitionsSender;
+    private readonly factionRegistrationRequester: FactionRegistrationRequester;
     private constructor(private readonly systemManager: SystemManager) {
-        this.factionDefinitionsSender = FactionDefinitionsSender.create(this);
+        this.factionRegistrationRequester = FactionRegistrationRequester.create(this);
     }
     public static create(systemManager: SystemManager): FactionManager {
         return new FactionManager(systemManager);
     }
 
-    public sendFactionDefinitions(): void {
-        this.factionDefinitionsSender.send();
+    public requestFactionRegistration(): void {
+        this.factionRegistrationRequester.request();
     }
 }
