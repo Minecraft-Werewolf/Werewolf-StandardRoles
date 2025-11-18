@@ -1,5 +1,7 @@
 export const SCRIPT_EVENT_COMMAND_IDS = {
     WORLD_STATE_CHANGE: "world_state_change",
+    FACTION_REGISTRATION_REQUEST: "role_registration_request",
+    FACTION_REGISTRATION_RESPONSE: "faction_registration_response",
     ROLE_REGISTRATION_REQUEST: "role_registration_request",
     ROLE_REGISTRATION_RESPONSE: "role_registration_response",
 };

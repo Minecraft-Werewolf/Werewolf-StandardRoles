@@ -10,7 +10,7 @@ export class RoleManager {
         return new RoleManager(systemManager);
     }
 
-    public sendRegistrationRoles(): void {
+    public sendRoleDefinitions(): void {
         this.roleDefinitionsSender.send();
     }
 }

@@ -2,6 +2,7 @@ import type { KairoCommand } from "../../Kairo/utils/KairoUtils";
 import { InGameManager } from "./ingame/InGameManager";
 import { OutGameManager } from "./outgame/OutGameManager";
 import { SystemEventManager } from "./system/events/SystemEventManager";
+import { FactionManager } from "./system/factions/FactionManager";
 import { RoleManager } from "./system/roles/RoleManager";
 import { ScriptEventReceiver } from "./system/ScriptEventReceiver";
 import { WorldStateChanger } from "./system/WorldStateChanger";
@@ -15,6 +16,7 @@ export class SystemManager {
     private readonly scriptEventReceiver: ScriptEventReceiver;
     private readonly systemEventManager: SystemEventManager;
     private readonly worldStateChanger: WorldStateChanger;
+    private readonly factionManager: FactionManager;
     private readonly roleManager: RoleManager;
     private inGameManager: InGameManager | null = null;
     private outGameManager: OutGameManager | null = null;
@@ -24,6 +26,7 @@ export class SystemManager {
         this.scriptEventReceiver = ScriptEventReceiver.create(this);
         this.systemEventManager = SystemEventManager.create(this);
         this.worldStateChanger = WorldStateChanger.create(this);
+        this.factionManager = FactionManager.create(this);
         this.roleManager = RoleManager.create(this);
     }
 
@@ -81,6 +84,10 @@ export class SystemManager {
     }
     public createOutGameManager(): OutGameManager {
         return OutGameManager.create(this);
+    }
+
+    public getFactionManager(): FactionManager {
+        return this.factionManager;
     }
 
     public getRoleManager(): RoleManager {

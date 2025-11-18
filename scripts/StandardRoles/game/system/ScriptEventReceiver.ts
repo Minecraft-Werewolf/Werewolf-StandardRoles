@@ -14,8 +14,11 @@ export class ScriptEventReceiver {
             case SCRIPT_EVENT_COMMAND_IDS.WORLD_STATE_CHANGE:
                 this.handleWorldStateChange(data.worldState);
                 break;
+            case SCRIPT_EVENT_COMMAND_IDS.FACTION_REGISTRATION_REQUEST:
+                this.systemManager.getFactionManager().sendFactionDefinitions();
+                break;
             case SCRIPT_EVENT_COMMAND_IDS.ROLE_REGISTRATION_REQUEST:
-                this.systemManager.getRoleManager().sendRegistrationRoles();
+                this.systemManager.getRoleManager().sendRoleDefinitions();
             default:
                 break;
         }
