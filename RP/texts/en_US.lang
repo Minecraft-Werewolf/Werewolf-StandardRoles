@@ -1,2 +1,29 @@
 werewolf-standardroles.name=Werewolf-StandardRoles
 werewolf-standardroles.description=provides and handles the fundamental roles of the Werewolf game.
+
+werewolf-standardroles.faction.name.villager=
+werewolf-standardroles.faction.description.villager=
+
+werewolf-standardroles.faction.name.werewolf=
+werewolf-standardroles.faction.description.werewolf=
+
+werewolf-standardroles.role.name.villager=Villager
+werewolf-standardroles.role.description.villager=An ordinary person with no special abilities. Yet precisely because they lack any powers, they can speak their thoughts openly without fearing being targeted by the werewolves.
+
+werewolf-standardroles.role.name.seer=Seer
+werewolf-standardroles.role.description.seer=A renowned diviner known for exceptional skill. They can inspect another player and determine whether that person is a werewolf.
+
+werewolf-standardroles.role.name.medium=Medium
+werewolf-standardroles.role.description.medium=A spiritual medium who perceives the unseen through prayer. They can commune with the souls of the dead and learn what role the deceased held in life.
+
+werewolf-standardroles.role.name.knight=Knight
+werewolf-standardroles.role.description.knight=A knight who protects others with mysterious power. They can grant protection to another player, preventing one attack against them.
+
+werewolf-standardroles.role.name.werewolf=Werewolf
+werewolf-standardroles.role.description.werewolf=A terrifying creature hiding among the gathered guests. The werewolves win by eliminating the entire Villager faction.
+
+werewolf-standardroles.role.name.greatwolf=Great Wolf
+werewolf-standardroles.role.description.greatwolf=A werewolf who appears as a Villager when inspected by the Seer. However, the Medium can reveal not only their true nature but also that they are a Great Wolf.
+
+werewolf-standardroles.role.name.madman=Madman
+werewolf-standardroles.role.description.madman=A dangerous human who sides with the werewolves, though unaware of who they are. The Madman wins if the Werewolf faction prevails.

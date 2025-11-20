@@ -1,4 +1,5 @@
 import type { RawMessage } from "@minecraft/server";
+import { WEREWOLF_STANDARDROLES_TRANSLATE_IDS } from "../constants/translate";
 
 export interface FactionDefinition {
     id: string;
@@ -13,8 +14,10 @@ export interface FactionDefinition {
 export const factions: FactionDefinition[] = [
     {
         id: "villager",
-        name: {},
-        description: {},
+        name: { translate: WEREWOLF_STANDARDROLES_TRANSLATE_IDS.FACTION_NAME_VILLAGER },
+        description: {
+            translate: WEREWOLF_STANDARDROLES_TRANSLATE_IDS.FACTION_DESCRIPTION_VILLAGER,
+        },
         defaultColor: "§a",
         victoryCondition: {
             description: {},
@@ -22,8 +25,10 @@ export const factions: FactionDefinition[] = [
     },
     {
         id: "werewolf",
-        name: {},
-        description: {},
+        name: { translate: WEREWOLF_STANDARDROLES_TRANSLATE_IDS.FACTION_NAME_WEREWOLF },
+        description: {
+            translate: WEREWOLF_STANDARDROLES_TRANSLATE_IDS.FACTION_DESCRIPTION_WEREWOLF,
+        },
         defaultColor: "§4",
         victoryCondition: {
             description: {},
