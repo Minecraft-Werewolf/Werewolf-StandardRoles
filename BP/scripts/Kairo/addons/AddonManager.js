@@ -4,6 +4,7 @@ import { DataVaultReceiver } from "./router/DataVaultReceiver";
 export class AddonManager {
     constructor(kairo) {
         this.kairo = kairo;
+        this._isActive = false;
         this.receiver = AddonReceiver.create(this);
         this.dataVaultReceiver = DataVaultReceiver.create(this);
     }
@@ -22,13 +23,19 @@ export class AddonManager {
     _deactivateAddon() {
         this.kairo._deactivateAddon();
     }
-    _scriptEvent(message) {
-        this.kairo._scriptEvent(message);
+    _scriptEvent(data) {
+        this.kairo._scriptEvent(data);
     }
-    dataVaultHandleOnScriptEvent(message) {
-        this.dataVaultReceiver.handleOnScriptEvent(message);
+    dataVaultHandleOnScriptEvent(data) {
+        this.dataVaultReceiver.handleOnScriptEvent(data);
     }
     getDataVaultLastDataLoaded() {
         return this.dataVaultReceiver.getLastDataLoaded();
+    }
+    get isActive() {
+        return this._isActive;
+    }
+    setActiveState(state) {
+        this._isActive = state;
     }
 }

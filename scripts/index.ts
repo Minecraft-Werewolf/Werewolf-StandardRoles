@@ -1,4 +1,6 @@
 import { Kairo } from "./Kairo/index";
+import type { KairoCommand } from "./Kairo/utils/KairoUtils";
+import { SystemManager } from "./StandardRoles/game/SystemManager";
 
 async function main(): Promise<void> {
     Kairo.init(); // client
@@ -9,6 +11,9 @@ Kairo.onActivate = () => {
      * ここにアドオン有効化時の初期化処理を書く
      * Write the initialization logic executed when the addon becomes active
      */
+
+    SystemManager.getInstance().subscribeEvents();
+    SystemManager.getInstance().init();
 };
 
 Kairo.onDeactivate = () => {
@@ -18,15 +23,19 @@ Kairo.onDeactivate = () => {
      * Write the shutdown/cleanup logic executed when the addon becomes deactive
      * In principle, undo/disable what was done during initialization
      */
+
+    SystemManager.getInstance().unsubscribeEvents();
 };
 
-Kairo.onScriptEvent = (message: string) => {
+Kairo.onScriptEvent = (data: KairoCommand) => {
     /**
      * ここにはアドオンが scriptEvent を受け取った際の処理を書く
-     * 利用できるプロパティは { message } のみ
+     * 利用できるプロパティは { data: KairoCommand } のみ
      * Write the handler logic for when the addon receives a scriptEvent
-     * The only available property is { message }
+     * The only available property is { data: KairoCommand }
      */
+
+    SystemManager.getInstance().handleScriptEvent(data);
 };
 
 /**
