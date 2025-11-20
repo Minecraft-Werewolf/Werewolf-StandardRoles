@@ -17,13 +17,13 @@ interface RoleKey {
 
 type RoleRef = RoleKey;
 
-// name と description はidを使った translate 表現でやるからいらない
 export interface RoleDefinition {
     id: string;
     name: RawMessage;
     description: RawMessage;
     faction: string;
-    count: {
+    isExcludedFromSurvivalCheck?: boolean; // 主に狂人枠で使用
+    count?: {
         max?: number;
         step?: number;
     };
@@ -43,10 +43,53 @@ export interface RoleDefinition {
 export const roles: RoleDefinition[] = [
     {
         id: "villager",
-        name: {},
-        description: {},
+        name: { translate: "" },
+        description: { translate: "" },
         faction: "villager",
         count: { max: 40 },
         sortIndex: 0,
+    },
+    {
+        id: "seer",
+        name: {},
+        description: {},
+        faction: "villager",
+        sortIndex: 1,
+    },
+    {
+        id: "medium",
+        name: {},
+        description: {},
+        faction: "villager",
+        sortIndex: 2,
+    },
+    {
+        id: "knight",
+        name: {},
+        description: {},
+        faction: "villager",
+        sortIndex: 3,
+    },
+    {
+        id: "werewolf",
+        name: {},
+        description: {},
+        faction: "werewolf",
+        sortIndex: 4,
+    },
+    {
+        id: "great-wolf",
+        name: {},
+        description: {},
+        faction: "werewolf",
+        sortIndex: 5,
+    },
+    {
+        id: "madman",
+        name: {},
+        description: {},
+        faction: "werewolf",
+        isExcludedFromSurvivalCheck: true,
+        sortIndex: 6,
     },
 ];
