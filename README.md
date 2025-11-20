@@ -10,7 +10,7 @@ With this addon, you can start the game with a minimal ruleset while keeping com
 - Medium
 - Hunter
 - Werewolf
-- Big Wolf
+- Great Wolf
 - Madman
 
 Werewolf-StandardRoles は、人狼ゲームにおける基本的な役職を提供・処理するアドオンです。
