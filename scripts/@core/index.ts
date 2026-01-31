@@ -1,6 +1,6 @@
-import { Kairo } from "./Kairo/index";
+import { Kairo } from "./kairo";
+import { SystemManager } from "../@modules/werewolf/game/SystemManager";
 import type { KairoCommand, KairoResponse } from "./Kairo/utils/KairoUtils";
-import { SystemManager } from "./StandardRoles/game/SystemManager";
 
 async function main(): Promise<void> {
     Kairo.init(); // client
