@@ -11,8 +11,4 @@ export class InGameEntityHurt extends InGameEventHandler<undefined, EntityHurtAf
     }
 
     protected afterEvent = world.afterEvents.entityHurt;
-
-    protected resolvePlayerId(ev: EntityHurtAfterEvent): string | undefined {
-        return ev.hurtEntity.id;
-    }
 }
