@@ -1,12 +1,12 @@
 import { BaseEventManager } from "../../events/BaseEventManager";
 import type { InGameManager } from "../InGameManager";
-import { InGameEntityHurtHandler } from "./EntityHurt";
+import { InGameEntityHurt } from "./EntityHurt";
 
 export class InGameEventManager extends BaseEventManager {
-    private entityHurt: InGameEntityHurtHandler;
+    private entityHurt: InGameEntityHurt;
     private constructor(private readonly inGameManager: InGameManager) {
         super();
-        this.entityHurt = InGameEntityHurtHandler.create(this);
+        this.entityHurt = InGameEntityHurt.create(this);
     }
 
     public static create(inGameManager: InGameManager): InGameEventManager {
