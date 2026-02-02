@@ -12,5 +12,6 @@ export type PlayerData = {
     };
     role: RoleDefinition | null;
     isAlive: boolean;
+    isLeave: boolean;
     isVictory: boolean;
 };
