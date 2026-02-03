@@ -1,21 +1,17 @@
 import { SCRIPT_EVENT_COMMAND_IDS } from "../../constants/scriptevent";
 import { KAIRO_COMMAND_TARGET_ADDON_IDS } from "../../constants/systems";
-import {
-    roles,
-    type GameEventType,
-    type RoleDefinition,
-} from "../../../../VanillaPack/roles/roles";
+import { roles, type GameEventType, type RoleDefinition } from "../../../../werewolf/roles/roles";
 import type { SystemManager } from "../SystemManager";
 import { InGameEventManager } from "./events/InGameEventManager";
-import { GamePhase } from "./GamePhase";
 import type { WerewolfGameData } from "./game/WerewolfGameData";
 import { SkillManager } from "./game/SkillManager";
-import { playerData, type SelfPlayerData } from "../../../../VanillaPack/player";
+import { playerData, type SelfPlayerData } from "../../../../werewolf/player";
 import { world } from "@minecraft/server";
 import { GameManager } from "./game/GameManager";
 import { KairoUtils, type KairoResponse } from "../../../../@core/kairo/utils/KairoUtils";
-import type { FactionDefinition } from "../../../../VanillaPack/factions/factions";
-import { onSecondUpdate, onTickUpdate } from "../../../../VanillaPack/update";
+import type { FactionDefinition } from "../../../../werewolf/factions/factions";
+import { onSecondUpdate, onTickUpdate } from "../../../../werewolf/update";
+import { GamePhase } from "./GamePhase";
 
 export interface PlayerDataDTO {
     playerId: string;

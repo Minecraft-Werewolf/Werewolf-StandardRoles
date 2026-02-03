@@ -1,7 +1,7 @@
-import "./VanillaPack/events/EntityHurt";
+import "./werewolf/events/EntityHurt";
 
 import { Kairo } from "./@core/kairo";
-import { SystemManager } from "./@modules/werewolf/game/SystemManager";
+import { SystemManager } from "./@modules/game-manager/game/SystemManager";
 import type { KairoCommand, KairoResponse } from "./@core/kairo/utils/KairoUtils";
 
 async function main(): Promise<void> {

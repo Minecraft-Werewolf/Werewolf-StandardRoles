@@ -1,5 +1,5 @@
 import { EntityHurtAfterEvent, world } from "@minecraft/server";
-import { InGameEntityHurt } from "../../@modules/werewolf/game/ingame/events/EntityHurt";
+import { InGameEntityHurt } from "../../@modules/game-manager/game/ingame/events/EntityHurt";
 import { MinecraftDimensionTypes } from "@minecraft/vanilla-data";
 import { SYSTEMS } from "../constants/systems";
 

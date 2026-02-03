@@ -1,4 +1,4 @@
-import type { IngameConstants } from "../../../@modules/werewolf/game/ingame/InGameManager";
+import type { IngameConstants } from "../../../@modules/game-manager/game/ingame/InGameManager";
 import type { FactionDefinition } from "../../factions/factions";
 import type { RoleDefinition } from "../roles";
 
