@@ -1,4 +1,4 @@
-import type { SelfPlayerData } from "../@modules/game-manager/game/ingame/PlayerData";
+import type { SelfPlayerData } from "@mc-werewolf/game-engine";
 import { registerRuntimePlayerDefaults } from "../internal/runtimeRegistry";
 
 export type { SelfPlayerData };

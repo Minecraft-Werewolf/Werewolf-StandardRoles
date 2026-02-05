@@ -7,7 +7,7 @@ import {
     type KairoCommand,
     type KairoResponse,
 } from "@kairo-ts/router";
-import { SystemManager } from "./@modules/game-manager/game/SystemManager";
+import { SystemManager } from "@mc-werewolf/game-engine";
 import { properties } from "./properties";
 import { loadWerewolfDefinitionModules } from "./internal/definitionRegistryBridge";
 

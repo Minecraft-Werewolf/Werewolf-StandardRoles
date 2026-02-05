@@ -1,9 +1,9 @@
-import type { RoleDefinition, RoleGroupDefinition } from "../@modules/game-manager/constants/types";
 import { WEREWOLF_VANILLAPACK_TRANSLATE_IDS } from "./constants/translate";
 import {
     registerRoleDefinitions,
     registerRoleGroupDefinitions,
 } from "../internal/definitionRegistryBridge";
+import type { RoleDefinition, RoleGroupDefinition } from "@mc-werewolf/game-engine";
 
 export const roleGroups: RoleGroupDefinition[] = [];
 

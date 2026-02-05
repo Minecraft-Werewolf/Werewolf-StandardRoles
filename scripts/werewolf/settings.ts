@@ -1,4 +1,4 @@
-import type { SettingDefinition } from "../@modules/game-manager/constants/types";
+import type { SettingDefinition } from "@mc-werewolf/game-engine";
 import { registerSettingDefinitions } from "../internal/definitionRegistryBridge";
 
 export const settings: SettingDefinition[] = [];

@@ -1,17 +1,15 @@
-import type {
-    FactionDefinition,
-    RoleDefinition,
-    RoleGroupDefinition,
-    SettingDefinition,
-} from "../@modules/game-manager/constants/types";
-import type { GameEventContext } from "../@modules/game-manager/game/ingame/game/GameManager";
-import type { GameEventHandlerMap } from "../@modules/game-manager/game/ingame/game/SkillManager";
 import {
     registerDefinitions,
-    registerPlayerData as registerPlayerDataInRegistry,
-    registerRoleSkillHandlers as registerRoleSkillHandlersInRegistry,
+    registerPlayerDataInRegistry,
+    registerRoleSkillHandlersInRegistry,
     registerUpdateHandlers,
-} from "../@modules/game-manager/game/registry";
+    type FactionDefinition,
+    type GameEventContext,
+    type GameEventHandlerMap,
+    type RoleDefinition,
+    type RoleGroupDefinition,
+    type SettingDefinition,
+} from "@mc-werewolf/game-engine";
 import type { SelfPlayerData } from "../werewolf/player";
 
 export const loadWerewolfDefinitionModules = async (): Promise<void> => {
@@ -66,6 +64,8 @@ export const registerSecondUpdateHandler = (handler: (ev: GameEventContext) => v
     });
 };
 
-export const registerRoleSkillHandlerMap = (handlers: Record<string, GameEventHandlerMap>): void => {
+export const registerRoleSkillHandlerMap = (
+    handlers: Record<string, GameEventHandlerMap>,
+): void => {
     registerRoleSkillHandlersInRegistry(handlers);
 };

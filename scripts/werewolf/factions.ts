@@ -1,4 +1,4 @@
-import type { FactionDefinition } from "../@modules/game-manager/constants/types";
+import type { FactionDefinition } from "@mc-werewolf/game-engine";
 import { registerFactionDefinitions } from "../internal/definitionRegistryBridge";
 import { WEREWOLF_VANILLAPACK_TRANSLATE_IDS } from "./constants/translate";
 
