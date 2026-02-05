@@ -11,6 +11,11 @@ import type { GameEventType, RoleDefinition } from "../../constants/types";
 import { IngameConstants, type IngameConstantsDTO } from "./game/IngameConstants";
 import { KairoUtils, type KairoResponse } from "@kairo-ts/router";
 import type { SelfPlayerData } from "./PlayerData";
+import {
+    getRegisteredPlayerData,
+    getRegisteredRoles,
+    getRegisteredUpdateHandlers,
+} from "../registry";
 
 export interface PlayerDataDTO {
     playerId: string;
@@ -36,13 +41,12 @@ export class InGameManager {
     ) {
         this.inGameEventManager = InGameEventManager.create(this);
         this.ingameConstants = IngameConstants.create(this, ingameConstantsDTO);
-        const updateHandlers = this.systemManager.getRegistry().getUpdateHandlers();
+        const updateHandlers = getRegisteredUpdateHandlers();
         this.gameManager = GameManager.create(this, {
-            onTickUpdate: updateHandlers?.onTickUpdate,
-            onSecondUpdate: updateHandlers?.onSecondUpdate,
+            onTickUpdate: updateHandlers.onTickUpdate,
+            onSecondUpdate: updateHandlers.onSecondUpdate,
         });
-        const roles = this.systemManager.getRegistry().getRoles() ?? [];
-        this.skillManager = SkillManager.create(this, roles);
+        this.skillManager = SkillManager.create(this, getRegisteredRoles());
         this.initSelfPlayersData();
     }
 
@@ -76,9 +80,7 @@ export class InGameManager {
     }
 
     public getRoleDefinition(roleId: string): RoleDefinition | undefined {
-        const roles = this.systemManager.getRegistry().getRoles();
-        if (!roles) return undefined;
-        return roles.find((role) => role.id === roleId);
+        return getRegisteredRoles().find((role) => role.id === roleId);
     }
 
     public getIngameConstants(): IngameConstants {
@@ -112,7 +114,7 @@ export class InGameManager {
 
     private initSelfPlayersData(): void {
         const players = world.getPlayers();
-        const defaultPlayerData = this.systemManager.getRegistry().getPlayerData();
+        const defaultPlayerData = getRegisteredPlayerData();
 
         for (const player of players) {
             this.playerDataByPlayerId.set(player.id, {

@@ -1,4 +1,10 @@
 import type { SystemManager } from "../../SystemManager";
+import {
+    getRegisteredFactions,
+    getRegisteredRoleGroups,
+    getRegisteredRoles,
+    getRegisteredSettings,
+} from "../../registry";
 import { FactionRegistrationRequester } from "./factions/FactionRegistrationRequester";
 import { RoleGroupRegistrationRequester } from "./rolegroup/RoleGroupRegistrationRequester";
 import { RoleRegistrationRequester } from "./roles/RoleRegistrationRequester";
@@ -17,22 +23,9 @@ export class DefinitionManager {
     }
 
     public requestDefinitionsRegistration(): void {
-        const registry = this.systemManager.getRegistry();
-        const roles = registry.getRoles();
-        if (roles) {
-            this.roleRegistrationRequester.request(roles);
-        }
-        const factions = registry.getFactions();
-        if (factions) {
-            this.factionRegistrationRequester.request(factions);
-        }
-        const roleGroups = registry.getRoleGroups();
-        if (roleGroups) {
-            this.roleGroupRegistrationRequester.request(roleGroups);
-        }
-        const settings = registry.getSettings();
-        if (settings) {
-            this.settingRegistrationRequester.request(settings);
-        }
+        this.roleRegistrationRequester.request(getRegisteredRoles());
+        this.factionRegistrationRequester.request(getRegisteredFactions());
+        this.roleGroupRegistrationRequester.request(getRegisteredRoleGroups());
+        this.settingRegistrationRequester.request(getRegisteredSettings());
     }
 }

@@ -9,7 +9,7 @@ import {
 } from "@kairo-ts/router";
 import { SystemManager } from "./@modules/game-manager/game/SystemManager";
 import { properties } from "./properties";
-import { registerWerewolfModules } from "./werewolf/internal/register";
+import { registerWerewolfModules } from "./werewolf/register";
 
 async function main(): Promise<void> {
     Kairo.init(properties); // client
