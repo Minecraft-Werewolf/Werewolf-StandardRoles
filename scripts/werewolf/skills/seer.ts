@@ -1,6 +1,5 @@
 import { world } from "@minecraft/server";
 import { ModalFormData } from "@minecraft/server-ui";
-import { getRoleDefaultColor } from "./utils";
 import type { GameEventHandlerMap } from "../../@modules/game-manager/game/ingame/game/SkillManager";
 import { SYSTEMS } from "../constants/systems";
 import { WEREWOLF_VANILLAPACK_TRANSLATE_IDS } from "../constants/translate";
@@ -67,7 +66,9 @@ export const seerSkillHandlers: GameEventHandlerMap = {
                     {
                         text:
                             divinationResultRoleDefinition.color ??
-                            getRoleDefaultColor(c, divinationResultRoleDefinition),
+                            c.getFactionById(divinationResultRoleDefinition.factionId)
+                                ?.defaultColor ??
+                            "§f",
                     },
                     divinationResultRoleDefinition.name,
                 ],

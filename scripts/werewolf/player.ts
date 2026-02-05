@@ -1,5 +1,5 @@
 import type { SelfPlayerData } from "../@modules/game-manager/game/ingame/PlayerData";
-import { registerPlayerData } from "./register";
+import { registerPlayerData } from "../internal/registry";
 
 export type { SelfPlayerData };
 

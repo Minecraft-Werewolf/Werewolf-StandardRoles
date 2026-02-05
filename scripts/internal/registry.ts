@@ -3,11 +3,11 @@ import type {
     RoleDefinition,
     RoleGroupDefinition,
     SettingDefinition,
-} from "../../@modules/game-manager/constants/types";
-import type { GameEventContext } from "../../@modules/game-manager/game/ingame/game/GameManager";
-import type { GameEventHandlerMap } from "../../@modules/game-manager/game/ingame/game/SkillManager";
-import { SystemManager } from "../../@modules/game-manager/game/SystemManager";
-import type { SelfPlayerData } from "../player";
+} from "../@modules/game-manager/constants/types";
+import type { GameEventContext } from "../@modules/game-manager/game/ingame/game/GameManager";
+import type { GameEventHandlerMap } from "../@modules/game-manager/game/ingame/game/SkillManager";
+import { SystemManager } from "../@modules/game-manager/game/SystemManager";
+import type { SelfPlayerData } from "../werewolf/player";
 
 export const registerWerewolfModules = (): void => {
     SystemManager.getInstance().getRegistry().init({});

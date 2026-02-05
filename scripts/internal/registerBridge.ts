@@ -1,27 +1,25 @@
-import {
-    registerDefinitions,
-    registerPlayerData as registerPlayerDataInternal,
-    registerUpdateHandlers,
-    registerRoleSkillHandlers as registerRoleSkillHandlersInternal,
-} from "../@modules/game-manager/game/registry";
 import type {
     FactionDefinition,
     RoleDefinition,
     RoleGroupDefinition,
     SettingDefinition,
 } from "../@modules/game-manager/constants/types";
-import type { GameEventHandlerMap } from "../@modules/game-manager/game/ingame/game/SkillManager";
 import type { GameEventContext } from "../@modules/game-manager/game/ingame/game/GameManager";
-import type { SelfPlayerData } from "../@modules/game-manager/game/ingame/PlayerData";
+import type { GameEventHandlerMap } from "../@modules/game-manager/game/ingame/game/SkillManager";
+import {
+    registerDefinitions,
+    registerUpdateHandlers,
+} from "../@modules/game-manager/game/registry";
+import type { SelfPlayerData } from "../werewolf/player";
 
 export const registerWerewolfModules = async (): Promise<void> => {
     await Promise.all([
-        import("./roles").catch(() => undefined),
-        import("./factions").catch(() => undefined),
-        import("./settings").catch(() => undefined),
-        import("./update").catch(() => undefined),
-        import("./player").catch(() => undefined),
-        import("./skills/skillHandlers").catch(() => undefined),
+        import("../werewolf/roles").catch(() => undefined),
+        import("../werewolf/factions").catch(() => undefined),
+        import("../werewolf/settings").catch(() => undefined),
+        import("../werewolf/update").catch(() => undefined),
+        import("../werewolf/player").catch(() => undefined),
+        import("../werewolf/skills/skillHandlers").catch(() => undefined),
     ]);
     registerUpdateHandlers({});
 };
@@ -51,7 +49,7 @@ export const registerSettings = (settings: SettingDefinition[]): void => {
 };
 
 export const registerPlayerData = (data: SelfPlayerData): void => {
-    registerPlayerDataInternal(data);
+    registerPlayerData(data);
 };
 
 export const registerOnTickUpdate = (handler: (ev: GameEventContext) => void): void => {
@@ -67,5 +65,5 @@ export const registerOnSecondUpdate = (handler: (ev: GameEventContext) => void):
 };
 
 export const registerRoleSkillHandlers = (handlers: Record<string, GameEventHandlerMap>): void => {
-    registerRoleSkillHandlersInternal(handlers);
+    registerRoleSkillHandlers(handlers);
 };

@@ -4,7 +4,7 @@ import type { GameEventType, RoleDefinition } from "../../../constants/types";
 import type { InGameManager } from "../InGameManager";
 import type { IngameConstants } from "./IngameConstants";
 import type { WerewolfGameData } from "./WerewolfGameData";
-import { getRegisteredRoleSkillHandlers } from "../../../registry";
+import { getRegisteredRoleSkillHandlers } from "../../registry";
 
 export type RoleSkillHandler = (ev: SkillEventContext) => Promise<boolean> | boolean;
 

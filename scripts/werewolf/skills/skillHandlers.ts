@@ -2,7 +2,7 @@ import type { GameEventHandlerMap } from "../../@modules/game-manager/game/ingam
 import { knightSkillHandlers } from "./knight";
 import { mediumSkillHandlers } from "./medium";
 import { seerSkillHandlers } from "./seer";
-import { registerRoleSkillHandlers } from "../register";
+import { registerRoleSkillHandlers } from "../../internal/registerBridge";
 
 export const roleSkillHandlers: Record<string, GameEventHandlerMap> = {
     seer: seerSkillHandlers,
