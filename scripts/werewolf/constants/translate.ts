@@ -24,7 +24,7 @@ export const WEREWOLF_VANILLAPACK_TRANSLATE_IDS = {
     ROLE_DESCRIPTION_GREATWOLF: "werewolf-vanillapack.role.description.greatwolf",
     ROLE_DESCRIPTION_MADMAN: "werewolf-vanillapack.role.description.madman",
 
-    ROLE_GROUP_NAME_WEREWOLF: "werewolf-vanillapack.roleGroup.name.werewolf",
+    ROLE_GROUP_NAME_WEREWOLVES: "werewolf-vanillapack.roleGroup.name.werewolves",
 
     WEREWOLF_GAME_RESULT_WEREWOLF_FACTION_VICTORY_TITLE:
         "werewolf-vanillapack.game.result.werewolffaction.victory.title",

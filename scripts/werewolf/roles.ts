@@ -82,12 +82,12 @@ export const roles: RoleDefinition[] = [
         description: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_DESCRIPTION_WEREWOLF },
         factionId: "werewolf",
         roleGroup: {
-            id: "werewolf",
-            name: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_GROUP_NAME_WEREWOLF },
+            id: "werewolves",
+            name: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_GROUP_NAME_WEREWOLVES },
             color: "§4",
         },
         revealTo: {
-            roleGroups: ["werewolf"],
+            roleGroups: ["werewolves"],
         },
         count: { max: 10 },
         sortIndex: 4,
@@ -98,12 +98,12 @@ export const roles: RoleDefinition[] = [
         description: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_DESCRIPTION_GREATWOLF },
         factionId: "werewolf",
         roleGroup: {
-            id: "werewolf",
-            name: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_GROUP_NAME_WEREWOLF },
+            id: "werewolves",
+            name: { translate: WEREWOLF_VANILLAPACK_TRANSLATE_IDS.ROLE_GROUP_NAME_WEREWOLVES },
             color: "§4",
         },
         revealTo: {
-            roleGroups: ["werewolf"],
+            roleGroups: ["werewolves"],
         },
         divinationResult: "villager",
         clairvoyanceResult: "great-wolf",
