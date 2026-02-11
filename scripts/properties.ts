@@ -11,7 +11,7 @@ export const properties: KairoAddonProperties = {
             "provides and handles the fundamental mechanics and standard gameplay of the Werewolf game.",
         version: {
             major: 1,
-            minor: 0,
+            minor: 1,
             patch: 0,
             prerelease: "dev.2",
             // build: "abc123",
